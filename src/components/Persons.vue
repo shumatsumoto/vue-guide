@@ -3,7 +3,7 @@ import { ref, Ref } from "vue";
 import PersonPostForm from "./PersonPostForm.vue";
 import PersonList from "./PersonList.vue";
 
-type Person = {
+export type Person = {
   id: number;
   name: string;
   age: number;
@@ -13,15 +13,23 @@ const persons: Ref<Person[]> = ref([
   { id: 0, name: "John", age: 24 },
   { id: 1, name: "Shu", age: 22 },
 ]);
+
+const registerPerson = (person: Person) => {
+  persons.value.push(person);
+};
+
+const deletePerson = (id: number) => {
+  persons.value = persons.value.filter((p) => p.id !== id);
+};
 </script>
 
 <template>
   <div class="container">
     <h1>Title</h1>
-    <PersonPostForm />
+    <PersonPostForm @register="registerPerson" />
     <div class="list-container">
       <ul>
-        <PersonList />
+        <PersonList :persons="persons" @delete="deletePerson" />
       </ul>
     </div>
   </div>
