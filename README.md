@@ -32,7 +32,7 @@
 
 ## :green_book: Reference
 
-...
+- [[2022年決定版] Vue3 x Typescriptによるアプリケーションづくり](https://www.udemy.com/course/vue3-typescript/)
 
 ## :hatching_chick: Author
 
