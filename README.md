@@ -16,7 +16,7 @@
 
 ## :pencil2: Overview
 
-...
+Creating apps with Vue3 x Typescript
 
 ## :hammer: Requirement
 
